@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        {{nome}}, {{idade}}, {{faculdade.possui}}, {{faculdade.curso}}
+    </div>
+    
+
+
+<script>
+
+
+
+
+   const vm = new Vue ({
+          el: "#app",
+          data: {
+           nome: "Andre alfred",
+           idade: "idade 29 Anos",
+           faculdade: {
+               possui: "sim",
+               curso: "Design",
+           }
+       }
+   })
+   
+   vm.nome = "João"
+
+</script>
+
+</body>
+</html>

@@ -11,9 +11,9 @@
 <body>
 
     <div id="app">
-        {{contador}}
-        <button @click="incrementar">Incrementando</button>
-        <button @click="diminuir">Decrementando</button>
+        {{compra}}
+        <button @click="mudarCompra('Guitarra')">Guitarra</button>
+        <button @click="mudarCompra('Violão')">Violão</button>
         
     </div>
 
@@ -22,15 +22,13 @@
     const vm = new Vue ({
         el: "#app",
         data: {
-            contador: 0,
+            compra: ""
         },
         methods: {
-            incrementar() {
-                this.contador++
+            mudarCompra(instrumento) {
+                this.compra = instrumento
             },
-            diminuir() {
-                this.contador--
-            }
+    
         }
     })
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Computed 2</title>
+</head>
+
+<body>
+  
+  <div id="app">
+    <ul>
+      <li v-for="carro in carroAzul">{{carro.marca}}</li>
+      <li>{{carroAzul}}</li>
+    </ul> 
+     
+  </div>
+
+
+
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        carro: [
+        {
+          marca: "VW",
+          cor: "Azul"
+        },
+        {
+          marca: "Ford",
+          cor: "Roxo"
+        },
+        {
+          marca: "Ferrari",
+          cor: "Azul"
+        }
+        ]
+    
+      },
+      // Criando uma função que vai retornar os carros azuis.
+      computed: {
+        carroAzul() {
+          const filtro = this.carro.filter(({cor}) => cor === "Azul")
+          return filtro
+        },
+      }
+    })
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Reatividade</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in lista">{{item}}</li>
+    </ul>
+    <button @click="removerItem">Remover</button>
+    <button @click="modificarItem">Modificar</button>
+    <button @click="modificarItemNaofunciona">Modificar com Falha</button>
+    <button @click="addItem">Adicionar novo item</button>
+  </div>
+  <script>
+const vm = new Vue({ 
+  el: "#app",
+  data: {
+    lista: ["Item 1", "Item 2", "Item 3"]
+  },
+  methods: {
+    removerItem() {
+      this.lista.pop(); // ativa a reatividade, tirando o ultimo item da lista.
+    },
+    addItem() {
+      this.lista.push("Mais um item")
+    },
+    modificarItem() {
+      this.$set(this.lista, 0, "Banana") 
+    },
+    modificarItemNaofunciona() { //Dessa forma não vou conseguir modificar o elemento da lista.
+      this.lista[0] = "Banana"
+    }
+  }
+});
+  </script>
+</body>
+</html>

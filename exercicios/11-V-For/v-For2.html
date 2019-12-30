@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Vue.js</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(elemento, key) in estados">
+        <p>{{elemento.populacao}}</p>
+       <p> {{elemento.nome}} </p>
+       <p> {{elemento.nome == "SP"}}</p>
+      </li>
+   
+      <!-- Usando operador destructuring atributo populacao e nome-->
+      <!-- Usando :key  -->
+      <li v-for="({populacao, nome}, key) in estados" :key="key + nome">
+        <p>{{populacao}}</p>
+        <p>{{nome}}</p>
+       </li>
+
+       <div>
+         <p v-for="n in 10">
+           {{n}}
+         </p>
+       </div>
+
+
+    </ul>
+  </div>
+  <script>
+const vm = new Vue({
+  el: "#app",
+  data: {
+    estados: {
+      sp:{
+        populacao: "45milhoes",
+        nome: "SP"
+      },
+      mg:{
+        populacao: "21milhoes",
+        nome: "MG"
+      },
+      rj:{
+        populacao: "33milhoes",
+        nome: "RJ"
+      },
+
+    }
+
+  },
+})
+  </script>
+</body>
+</html>

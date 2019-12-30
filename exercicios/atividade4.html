@@ -25,19 +25,17 @@
 
 
 
-<div id="app">
-    <div>
-        
-        <p :class="google.openapi != apple.openapi ? 'verde' : 'vermelho'">{{google.openapi}}</p>
-    </div>
+    <div id="app">
+        <div>
+            <p :class="google.openapi != apple.openapi ? 'verde' : 'vermelho'">{{google.openapi}}</p>
+        </div>
 
-    <div>
-    
-        <p :class="apple.openapi === google.openapi ? 'verde' : 'vermelho'">{{google.openapi}}</p>
-    </div>
+        <div>
+            <p :class="apple.openapi === google.openapi ? 'verde' : 'vermelho'">{{google.openapi}}</p>
+        </div>
 
-    <button @click="puxarDados">Puxar Dados</button>
-</div>
+        <button @click="puxarDados">Puxar Dados</button>
+    </div>
 
 
     <script>
@@ -50,17 +48,17 @@
             methods: {
                 fetchGoogle() {
                     fetch("https://cloud.iexapis.com/v1")
-                    .then(r => r.json())
-                    .then(google => {  
-                        this.google = google;
-                    })
+                        .then(r => r.json())
+                        .then(google => {
+                            this.google = google;
+                        })
                 },
                 fetchApple() {
                     fetch("https://cloud.iexapis.com/v1")
-                    .then(r => r.json())
-                    .then(apple => {
-                        this.apple = apple
-                    })
+                        .then(r => r.json())
+                        .then(apple => {
+                            this.apple = apple
+                        })
                 },
                 puxarDados() {
                     this.fetchApple()
@@ -69,7 +67,7 @@
             }
         })
     </script>
- 
+
 </body>
 
 </html>

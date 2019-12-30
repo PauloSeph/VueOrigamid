@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/vue.min.js"></script>
+    <title>VBind</title>
+</head>
+<body>
+    
+
+    <div id="app">
+        <button @click="handleClick">Clica</button>
+        {{contador}}
+        <button @click="ativo = !ativo">Toggle</button>
+        <p v-if="ativo">Mostrar testo</p>
+    </div>
+
+
+
+
+        <script>
+
+            const vm = new Vue ({
+                el: "#app",
+                data: {
+                    contador: 0,
+                    ativo: true
+                },
+                methods: {
+                    handleClick(event) {
+                        console.log(event)
+                    }
+                }
+            })
+        </script>
+
+</body>
+</html>

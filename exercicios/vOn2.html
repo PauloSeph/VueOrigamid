@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/vue.min.js"></script>
+    <title>VBind</title>
+</head>
+<body>
+    
+
+    <div id="app">
+        <a href="#interno" @click.prevent.once="handleClick" >Link Interno</a>
+    </div>
+
+
+
+
+        <script>
+
+            const vm = new Vue ({
+                el: "#app",
+                data: {
+                    contador: 0,
+                    ativo: true
+                },
+                methods: {
+                    handleClick(event) {
+                        event.preventDefault()
+                        console.log(event)
+                    }
+                }
+            })
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/vue.min.js"></script>
+    <title>VBind</title>
+</head>
+<body>
+    
+    <!-- Event Teclas -->
+    <div id="app">
+        <input type="text" @keyup.f="handleClick">
+        <p @mousemove="handleMove">Esse é meu mouse x: {{mouse.x}}</p>
+    </div>
+
+
+
+
+        <script>
+
+            const vm = new Vue ({
+                el: "#app",
+                data: {
+                    contador: 0,
+                    ativo: true,
+                    mouse: "",
+                },
+                methods: {
+                    handleClick(event) {
+                        console.log(event.key)
+                    },
+                    handleMove(event) {
+                        this.mouse = event
+                    },
+                
+                }
+
+
+            })
+        </script>
+
+</body>
+</html>

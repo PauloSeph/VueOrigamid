@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>At 4</title>
+</head>
+
+<body>
+
+  <style>
+      .verde {
+          color: green
+      }
+
+      .vermelho {
+          color: red
+      }
+  </style>
+
+
+
+
+
+  <div id="app">
+      <div>
+          <p :class="google.openapi != apple.openapi ? 'verde' : 'vermelho'">{{google.openapi}}</p>
+      </div>
+
+      <div>
+          <p :class="apple.openapi === google.openapi ? 'verde' : 'vermelho'">{{google.openapi}}</p>
+      </div>
+
+      <button @click="puxarDados">Puxar Dados</button>
+  </div>
+
+
+  <script>
+      const vm = new Vue({
+          el: "#app",
+          data: {
+              google: {},
+              apple: {},
+          },
+          methods: {
+              fetchGoogle() {
+                  fetch("https://cloud.iexapis.com/v1")
+                      .then(r => r.json())
+                      .then(google => {
+                          this.google = google;
+                      })
+              },
+              fetchApple() {
+                  fetch("https://cloud.iexapis.com/v1")
+                      .then(r => r.json())
+                      .then(apple => {
+                          this.apple = apple
+                      })
+              },
+              puxarDados() {
+                  this.fetchApple()
+                  this.fetchGoogle()
+              }
+          }
+      })
+  </script>
+
+
+  <!--
+  Utilizando as API's
+  https://api.iextrading.com/1.0/stock/aapl/quote
+  https://api.iextrading.com/1.0/stock/googl/quote
+
+  - Compare o marketCap (valor de
+  mercado) entre ambas.
+
+  - Mostre o nome das empresas e o valor
+  na interface (companyName e marketCap).
+
+  - Mude a cor para verde o nome da empresa com
+  maior marketCap e vermelho a com menor.
+-->
+
+</body>
+
+</html>

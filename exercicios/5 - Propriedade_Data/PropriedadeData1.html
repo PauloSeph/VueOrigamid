@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Data</title>
+</head>
+
+  <h1>Data1</h1>
+<body>
+
+  <!-- Test -->
+  
+  <div id="app">
+      {{logado}}
+  </div>
+
+  
+<script>
+
+ const vm = new Vue ({
+     el: "#app",
+     data: {
+      logado: ""
+     }
+ })
+
+ setTimeout(() => {
+     vm.logado = "Sim"
+ }, 2000)
+ 
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Data2</title>
+</head>
+
+<h1>Data1</h1>
+
+<body>
+
+  <!-- Test -->
+
+  <div id="app">
+    <p>{{comprou}}</p>
+    <p>{{total}}</p>
+    <p>{{objeto.item}}</p>
+    <p>{{objeto.item2}}</p>
+    <p>{{frutas[0]}}</p>
+    <p>{{frutas[1]}}</p>
+  </div>
+
+
+  <script>
+
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        comprou: true,
+        total: 49,
+        vitalicio: null,
+        objeto: {
+          item: "Item 1",
+          item2: "item 2"
+        },
+        frutas: ["Morango, Uva"]
+      }
+    })
+
+
+  </script>
+
+</body>
+
+</html>

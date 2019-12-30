@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Diretivas</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{titulo}}</h1>
+    
+      <!-- v-show -->
+     <div v-show="comprou" :style="{background: cor}">
+      <p>{{conteudo}}</p>
+      <p>{{lado * 100}}</p>
+    </div>
+     
+      <!-- v-model -->
+      <input v-model="cor" type="color">
+      {{cor}}
+   
+
+      <!-- v-bind com operação ternaria-->
+      <div>
+        <a :href="comprou ? href : ''">{{href}}</a>
+      </div>
+  
+
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        titulo: "Diretivas",
+        conteudo: "Esse é o conteúdo",
+        lado: 5,
+        comprou: true,
+        href: "https://www.origamid.com",
+        cor: "#333"
+      }
+    })
+  </script>
+</body>
+</html>

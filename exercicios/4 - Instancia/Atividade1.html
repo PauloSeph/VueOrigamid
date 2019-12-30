@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Atividade 1</title>
+</head>
+
+<body>
+
+  <div id="app">
+    {{nome}}
+  </div>
+
+  <div id="app1">
+    {{ferramenta}}
+  </div>
+
+  <div id="app2">
+    {{instrumento}}
+  </div>
+
+  <script>
+    // Crie uma tag com o id app e inicie uma instância de Vue
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        nome: "Martelo"
+      }
+    });
+
+    // Faça o HTML abaixo funcionar com Vue
+    new Vue({
+      el: "#app1",
+      data: {
+        ferramenta: "Chave"
+      }
+    })
+
+    new Vue({
+      el: "#app2",
+      data: {
+        instrumento: "Violino"
+      }
+    })
+
+  </script>
+</body>
+
+</html>

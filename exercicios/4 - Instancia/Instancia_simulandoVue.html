@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Instancia e simulando Vue</title>
+</head>
+
+<body>
+  <div id="lala">
+    {{instrumento}},
+    {{nomeProduto}}
+</div>
+
+
+  <script>
+
+        
+
+    const vm = new Vue({
+        el: "#lala",
+        data: {
+            instrumento: "Guitarra",
+            cor: "Azul"
+        },
+        computed: {
+            nomeProduto() {
+                setTimeout(() => {
+                    console.log('this do Timeout', this.instrumento)
+                }, 1000)
+                return `${this.instrumento} e ${this.cor}`
+            }
+        }
+    })
+
+    console.log(vm)
+
+
+
+
+    // Simulando Vue
+
+    function VueClone (options) {
+        this.options = options
+        this.el = document.querySelector(options.el)
+        this.data = options.data
+
+    }
+
+
+    const vmClone = new VueClone({
+        el: "#app",
+        data : {
+            nome: "Martelo",
+ 
+        }
+
+    })
+    console.log(vmClone)
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+  </script>
+</body>
+
+</html>

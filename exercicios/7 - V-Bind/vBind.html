@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>v-bind</title>
+</head>
+
+  <h1>v-bind</h1>
+
+<body>
+
+  <div id="app">
+    <a v-bind:href="link" href="https://www.origamid.com">Link do google</a>
+    <p :class="cor" class="ativo"></p>
+    <p :class="comprou ? cor1 : cor2 "></p>
+  </div>
+
+
+
+
+  <script>
+
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        link: "http://google.com.br",
+        cor: "vermelho",
+        comprou: true,
+        cor1: "verde",
+        cor2: "vermelho",
+      }
+    })
+  </script>
+</body>
+
+</html>

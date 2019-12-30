@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="./js/vue.min.js"></script>
-    <title>VBind</title>
+    <script src="../vue.min.js"></script>
+    <title>Modificadores</title>
 </head>
 <body>
     
+    <!-- Passando somente o prevent -->
+    <div id="app">
+        <a href="#interno" @click.prevent="handleClick">Link Interno</a>
+     </div>
+ 
+     <!-- Passando Modificadores forma encadeada Prevent+once -->
 
     <div id="app">
-        <button @click="handleClick">Clica</button>
-        {{contador}}
-        <button @click="ativo = !ativo">Toggle</button>
-        <p v-if="ativo">Mostrar testo</p>
+        <a href="#interno" @click.prevent.once="handleClick" >Link Interno</a>
     </div>
 
 
@@ -30,6 +33,7 @@
                 },
                 methods: {
                     handleClick(event) {
+                        event.preventDefault()
                         console.log(event)
                     }
                 }

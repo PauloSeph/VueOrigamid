@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>VIF2</title>
+</head>
+
+<body>
+  <div id="app">
+
+      <template v-if="logado">
+      <p>Usuário Deslogado</p>
+      <button @click="logado = false">logar</button>
+      </template>
+    
+      <template v-else>
+        <p>Usuário logado</p>
+        <button @click="logado = true">deslogar</button>
+        </template>
+      </div>
+
+
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        logado: true
+
+      }
+    })
+
+
+
+  </script>
+</body>
+</html>

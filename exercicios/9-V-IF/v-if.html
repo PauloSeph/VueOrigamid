@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>VIF</title>
+</head>
+
+<body>
+  <div id="app">
+    <p v-if="logado === 1">Usuário um logado</p>
+    <p v-else-if="logado === 2">Usuario dois logado</p>
+    <p v-else>Usuario deslogado</p>
+
+    </div>
+
+
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        logado: 0
+
+      }
+    })
+
+
+
+  </script>
+</body>
+</html>

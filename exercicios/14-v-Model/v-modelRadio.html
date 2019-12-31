@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>V-mode2</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="radio" name="azul" v-model="cor" value="Azul" id="azul"/>
+    <label for="azul">Azul</label><br/>
+    <input type="radio" name="vermelho" v-model="cor" value="Vermelho" id="vermelho"/>
+    <label for="vermelho">Vermelho</label><br/>
+    <input type="radio" name="verde" v-model="cor" value="Verde" id="Verde"/>
+    <label for="Verde">Verde</label><br/>
+
+      <p>cor: {{cor}}</p>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        cor: "",
+      }
+    });
+  </script>
+</body>
+</html>

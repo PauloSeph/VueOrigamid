@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>V-mode2</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="checkbox" id="receberEmail" v-model="receberEmail" >
+    <label for="receberEmail">Receber Email</label>
+    {{receberEmail}}
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        receberEmail: "",
+      }
+    });
+  </script>
+</body>
+</html>

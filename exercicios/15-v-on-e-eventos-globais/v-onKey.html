@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>V-On key</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <input @keyup.enter="ativar "type="text" name="" id="">
+    <input @keyup.13="ativar "type="text" name="" id="">
+    <!-- <input @keydown="ativar "type="text" name="" id=""> -->
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+
+      },
+      methods: {
+        ativar() {
+          console.log("Ativou")
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>

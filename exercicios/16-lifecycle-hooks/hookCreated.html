@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Created</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <p>{{mensagem}}</p>
+    <div>
+      {{github}}
+    </div>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        mensagem: "esta é uma mensagem teste",
+        github: {},
+      },
+      beforeCreate() {
+        console.log(this.mensagem)
+
+      },
+      created() {
+        this.puxarGitHub()
+        console.log(this.mensagem)
+      },
+      methods: {
+        puxarGitHub() {
+          fetch("http://api.github.com/users/origamid")
+            .then(r => r.json())
+            .then(r => {
+              this.github = r
+            })
+        }
+      }
+
+    })
+  </script>
+
+
+
+</body>
+
+</html>

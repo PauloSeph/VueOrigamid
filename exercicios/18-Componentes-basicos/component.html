@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Componente
+
+  </title>
+</head>
+
+<body>
+  <div id="app">
+    {{mensagem}}
+    <botao-contador></botao-contador>
+    <botao-contador></botao-contador>
+    <botao-contador></botao-contador>
+  </div>
+
+
+<!-- Criar um componente tem que ser forá da instancia -->
+<!-- Primeiro parametro é o nome do componente -->
+  <script>
+    Vue.component("BotaoContador", {
+      data() {
+        return {
+          total: 0,
+
+        }
+      },
+      template: `<button @click="total++">Contar: {{total}} </button>`,
+      methods: {
+        mostrarConsole() {
+          console.log("Ativou")
+        }
+      }
+    })
+
+
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        mensagem: "SIMM",
+      }
+    })
+  </script>
+
+</body>
+
+</html>

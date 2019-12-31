@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Class2</title>
+</head>
+
+<body>
+  <div id="app">
+    
+    <p :class="[grid, {ativo: estaAtivo}]">Texto Ativo</p>
+    <button @click="estaAtivo = !estaAtivo">Aperte</button>
+
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        grid: "grid-6",
+        cor: "azul",
+        estaAtivo: false,
+      }
+    })
+  </script>
+
+
+
+  <style>
+    .grid-6 {
+      background-color: red;
+    }
+
+    .azul {
+      color: yellow;
+    }
+
+    .ativo {
+      background-color: green;
+    }
+  </style>
+</body>
+</html>

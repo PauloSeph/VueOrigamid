@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../../vue.min.js"></script>
+  <title>Componente 1</title>
+  
+</head>
+
+<body>
+  <div id="app">
+    <tempo-hoje></tempo-hoje>
+    <acao-hoje></acao-hoje>
+    <p></p>
+  </div>
+
+  
+  <script type="module">
+    import TempoHoje from "./componentes/TempoHoje.js"
+    import AcaoHoje from "./componentes/AcaoHoje.js"
+   
+    // Registrando globalmente.
+    Vue.component("TempoHoje", TempoHoje)
+    
+    const vm = new Vue({
+      el: "#app",
+      data: {
+      
+      },
+      components: {
+        AcaoHoje
+      }
+    })
+  </script>
+
+</body>
+
+</html>

@@ -5,6 +5,8 @@
     <slot :user="user"></slot>
 
     <slot name="footer"></slot>
+    
+    <slot></slot>
   </div>
 </template>
 
@@ -16,12 +18,10 @@ export default {
       logo: "Batman",
       user: {
         nome: "André"
-        },
-            
       }
-          }
+    };
   }
-
+};
 </script>
 
 <style>

@@ -2,9 +2,7 @@
   <div id="app">
     <modal-principal>
 
-      
-
-      <template #header="{alo}">
+       <template #header="{alo}">
         <p>Esse é o Header</p>
         <p>{{alo}}</p>
       </template>

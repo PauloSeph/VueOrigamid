@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>Event</title>
+</head>
+
+<body>
+  <div id="app">
+    {{total}}
+    <meu-botao @origamid="mostrarMensagem"></meu-botao>
+  </div>
+
+  <script type="module">
+
+    // Criando componente
+    const MeuBotao = {
+      name: "MeuBotao",
+      data() {
+        return {
+          totalClientes: 200
+        }
+      },
+      template: `<button @click="">Clique</button>`,
+      methods: {
+
+      },
+      created() {
+        setTimeout(() => {
+          this.$emit("origamid", this.totalClientes)
+        }, 2000)
+      }
+
+    }
+
+
+    // Criando instancia Vue
+    const vm = new Vue({
+      el: "#app",
+      data: {
+       total: 0,
+      },
+      components: {
+        MeuBotao
+      },
+      methods: {
+        mostrarMensagem(mensagem) {
+          this.total = mensagem
+        }
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>

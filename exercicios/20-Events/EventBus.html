@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="./vue.js"></script>
-  <title>Att Events</title>
+  <script src="../vue.min.js"></script>
+  <title>Vue.js</title>
 </head>
 
 <body>
@@ -17,6 +17,7 @@
 
 <script type="module">
 const EventBus = new Vue();
+
 
 const ComponenteUm = {
   name: "ComponenteUm",
@@ -43,7 +44,7 @@ const ComponenteDois = {
   },
   created() {
     EventBus.$on("meuevento", (event) => {
-      this.mensagem = event
+      this.mensagem = event;
     })
   }
 }
